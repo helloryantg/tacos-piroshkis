@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<h1>All Tacos</h1>
+
+<a class="btn btn-primary" href="/tacos/new">New</a>
+    <h1>Tacos</h1>
+    <% for (key in tacos) {%>
+        <hr>
+        <h3><%= tacos[key].name %></h3>
+        <h4><%= tacos[key].protein %></h4>
+        <p><%= tacos[key].garnish %></p>
+        <a href='/tacos/<%= key %>'><button class="btn btn-info">Show</button></a>
+        <br>
+        <br>
+        <a href='/tacos/<%= key %>/edit'><button class="btn btn-success">Edit</button></a>
+        <br>
+        <br>
+        <form method="POST" action="/tacos/<%= key %>?_method=DELETE">
+        <button class="delete btn btn-danger" type="submit">Delete</button>
+        </form>
+        <hr>
+        <br>
+    <% } %>
+
+<%- include('../partials/footer') %>

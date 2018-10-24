@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h1><%= piroshki.name %></h1>
+        <hr>
+        <h4><%= piroshki.filling %></h4>
+        <p><%= piroshki.size %></p>
+        <br>
+        <a href='/piroshki/<%= id %>/edit'><button>Edit</button></a>
+        <br>
+        <br>
+        <form method="POST" action="/piroshki/<%= id %>?_method=DELETE">
+        <button class="delete btn btn-danger" type="submit">Delete</button>
+        </form>
+        <hr>
+        <br>
+<%- include('../partials/footer') %>
